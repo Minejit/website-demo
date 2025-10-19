@@ -60,8 +60,6 @@
 <script>
   let password = Math.floor(1000 + Math.random() * 9000).toString();
   console.log(password)
-  var a = String(password).split('').map(password)
-  console.log(a)
 while (true) {
   let guess = prompt("Guess the 4-digit code:");
 
@@ -95,7 +93,7 @@ while (true) {
     const divs = document.querySelectorAll('.btn'),
           clear = document.querySelector("#clearbtn"),
           check = document.querySelector("#checkbtn");
-
+          
     let display = document.querySelector("#ca");
     let digits = 0;
     let codeEntered = "";
@@ -119,21 +117,21 @@ while (true) {
 
     
     check.addEventListener('click', () => {
-        if (display.length !== 4 || isNaN(Number(display))) {
-          alert("Please enter a 4-digit number.");
-        }
-
+        const Entered = display.innerHTML
         let result = ["X", "X", "X", "X"];
+       
 
         for (let i = 0; i < 4; i++) {
-          if (password.includes(display[i])) {
-            if (guess[i] === password[i]) {
+          if (password.includes(Entered[i])) {
+            if (Entered[i] === password[i]) {
               result[i] = "A";
             } else {
               result[i] = "O";
             }
           }
         }
+      display.innerHTML= result.join('');
+      
 
     });
 
@@ -145,3 +143,4 @@ while (true) {
 
 </body>
 </html>
+
