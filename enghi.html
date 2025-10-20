@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="./er.css">
+    
+    <script>
+        function GuessGame()
+        {
+            document.getElementById("guess").innerHTML = "YOU CLICKED ME!";
+        
+        let password = Math.floor(1000 + Math.random() * 9000).toString();
+
+        while (true) {
+        let guess = prompt("Guess the 4-digit code:");
+
+        if (guess.length !== 4 || isNaN(Number(guess))) {
+            alert("Please enter a 4-digit number.");
+            continue;
+        }
+
+        let result = ["X", "X", "X", "X"];
+
+        for (let i = 0; i < 4; i++) {
+            if (password.includes(guess[i])) {
+            if (guess[i] === password[i]) {
+                result[i] = "A";
+            } else {
+                result[i] = "O";
+            }
+            }
+        }
+
+        alert(result.join(""));
+
+        if (result.join("") === "AAAA") {
+            alert("Right guess!");
+            break;
+        } else {
+            alert("Wrong guess. Try Again!");
+        }
+        } 
+}
+    </script>
+</head>
+<body>
+<!-- The video -->
+<video autoplay muted loop id="myVideo">
+  <source src="WOW.mp4" type="video/mp4">
+</video>
+<div class="container"><button id="button"></button>
+<div id="gift"><img src="" alt=""></div>
+<div class="content-1"><p id="guess" onclick="GuessGame()">Click me.</p></div>
+</div>
+
+
+
+
+</div>    
+</body>
+</html>
