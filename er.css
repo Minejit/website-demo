@@ -149,3 +149,31 @@ li{margin-bottom: 10px;}
 } #rick {
   pointer-events: none; /* allow clicks to pass through when hidden */
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+#gift {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* soft pulsing glow */
+.glow {
+  animation: glowPulse 2s infinite alternate;
+}
+
+/* subtle floating motion */
+@keyframes float {
+  0%, 100% { transform: translate(-50%, -52%) scale(1.05); }
+  50% { transform: translate(-50%, -48%) scale(1.1); }
+}
+
+/* glowing box effect */
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 15px rgba(255, 105, 180, 0.4); }
+  100% { box-shadow: 0 0 40px rgba(255, 0, 150, 0.8); }
+}
+
+@keyframes floatHearts {
+  0% { top: 100%; opacity: 0; }
+  50% { opacity: 1; }
+  100% { top: -10%; opacity: 0; }
+}
