@@ -1,21 +1,9 @@
 @font-face { font-family: minecraft; src: url('MinecraftTen-VGORe.ttf'); } 
-body{height:100vh;overflow: hidden;
+body{height:100vh;overflow: hidden;background-color: aquamarine;
 }
 h1, p{font-family: minecraft;color: wheat;}
 
-#myVideo {
-  position: fixed;   
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: cover;  
-  z-index: -1;
-  background-size: cover;
-}
+
 
 
 .container {
@@ -50,7 +38,7 @@ li{margin-bottom: 10px;}
 }
 
 @keyframes glow {
-  0%   { box-shadow: 0 0 20px 5px yellow; }
+  0%   { box-shadow: 0 0 20px 5px yellow;}
   50%  { box-shadow: 0 0 80px 30px gold; }
   100% { box-shadow: 0 0 40px 10px orange; }
 }
@@ -135,4 +123,29 @@ li{margin-bottom: 10px;}
     }
     #ca{color:lightblue;z-index: 1;width: auto;font-size: 4em;margin-bottom: 50px;}
     #table div:hover{cursor: pointer;}
+    .ri{position: relative;z-index: 1;}
 
+#fade, #rick {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: opacity 2s;
+  pointer-events: none; /* clicks pass through when hidden */
+}
+
+#fade {
+  background: black;
+  opacity: 0;
+  z-index: 999;
+}
+
+#rick {
+  object-fit: cover;
+  opacity: 0;
+  z-index: 1000;
+  display: none;
+} #rick {
+  pointer-events: none; /* allow clicks to pass through when hidden */
+}
